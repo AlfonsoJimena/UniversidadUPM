@@ -1,0 +1,86 @@
+{
+    "viaje": {
+        "@xmlns": "viaje",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:schemaLocation": "viaje viaje.xsd",
+        "Informacion": {
+            "fecha_comienzo": "2024-12-22",
+            "fecha_fin": "2025-01-03"
+        },
+        "Viajeros": {
+            "viajero": [
+                {
+                    "nombre": "Carlos MartÃ­nez PÃ©rez",
+                    "edad": "21",
+                    "DNI": "12345678A",
+                    "Pasaporte": "123456789",
+                    "Genero": "Masculino"
+                },
+                {
+                    "nombre": "Pepa Pig RamÃ­rez",
+                    "edad": "19",
+                    "DNI": "12345678B",
+                    "Pasaporte": "223456789",
+                    "Genero": "Femenino"
+                },
+                {
+                    "nombre": "Alfonso Jimena Ruiz",
+                    "edad": "20",
+                    "DNI": "05977025S",
+                    "Pasaporte": "123456789",
+                    "Genero": "Masculino"
+                }
+            ]
+        },
+        "Destinos": {
+            "destino": [
+                {
+                    "Pais": {
+                        "nombre": "EspaÃ±a",
+                        "Ciudades": {
+                            "ciudad": [
+                                {
+                                    "nombre": "Madrid",
+                                    "fecha_llegada": "2024-12-22",
+                                    "fecha_irse": "2024-12-27"
+                                },
+                                {
+                                    "nombre": "Barcelona",
+                                    "fecha_llegada": "2024-12-27",
+                                    "fecha_irse": "2024-12-30"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "Pais": {
+                        "nombre": "Italia",
+                        "Ciudades": {
+                            "ciudad": {
+                                "nombre": "Roma",
+                                "fecha_llegada": "2024-12-30",
+                                "fecha_irse": "2025-01-03"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "Vehiculos_viaje": {
+            "vehiculo": [
+                {
+                    "tipo": "AviÃ³n",
+                    "Marca": "Hawker Beechcraft",
+                    "Modelo": "400 XP"
+                },
+                {
+                    "tipo": "Coche",
+                    "Marca": "Porsche",
+                    "Modelo": "Taycan Turbo S"
+                }
+            ]
+        },
+        "$schema": "C:\\Users\\alfon\\OneDrive\\Escritorio\\Practica1_BDNR\\viaje.schema.json"
+    }
+}

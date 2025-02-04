@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="viaje"
+    elementFormDefault="qualified">
+
+    <xs:element name="viaje">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Informacion" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="fecha_comienzo" type="xs:date"></xs:element>
+                            <xs:element name="fecha_fin" type="xs:date"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Viajeros" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="viajero" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"></xs:element>
+                                        <xs:element name="edad">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="0"></xs:minInclusive>
+                                                    <xs:maxExclusive value="120"></xs:maxExclusive>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="DNI">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="[0-9]{8}[A-Z]"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Pasaporte" type="xs:string" minOccurs="1"></xs:element>
+                                        <xs:element name="Genero">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Masculino"></xs:enumeration>
+                                                    <xs:enumeration value="Femenino"></xs:enumeration>
+                                                    <xs:enumeration value="Otro (Sin especificar)"></xs:enumeration>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>   
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="Destinos" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="destino" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Pais" minOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="nombre" minOccurs="1" type="xs:string"></xs:element>                   
+                                                    <xs:element name="Ciudades" minOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ciudad" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="nombre" minOccurs="1" type="xs:string"></xs:element>
+                                                                            <xs:element name="fecha_llegada" minOccurs="1" type="xs:date"></xs:element>
+                                                                            <xs:element name="fecha_irse" minOccurs="1" type="xs:date"></xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>                                                        
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Vehiculos_viaje" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="vehiculo" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="tipo" type="xs:string"></xs:element>
+                                        <xs:element name="Marca" type="xs:string"></xs:element>
+                                        <xs:element name="Modelo" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
