@@ -16,11 +16,13 @@ body {
     min-height: 100vh;
 }
 
+
 header {
-    margin-top: auto;
     background: black;
-    padding: 1em 0;
+    padding: 1em;
 }
+
+
 nav {
     display: flex;
     justify-content: center;
@@ -42,6 +44,7 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
+
 main {
     flex-grow: 1;
     padding: 40px;
@@ -51,9 +54,26 @@ main {
     width: 80%;
 }
 
+
+.info-box {
+    width: 50%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+
+
 button {
-    width: 20%; 
-    padding-top: 20%; 
+    width: 20%;
+    padding-top: 20%;
     background-color: #007bff;
     color: white;
     border: none;
@@ -64,10 +84,10 @@ button {
     transition: background 0.3s;
 }
 
-
 button:hover {
     background-color: #0056b3;
 }
+
 
 form {
     background: rgba(255, 255, 255, 0.95);
@@ -78,6 +98,7 @@ form {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+
 footer {
     margin-top: auto;
     background: #222;
@@ -86,7 +107,9 @@ footer {
     text-align: center;
     font-size: 0.9em;
 }
-.gallery {
+
+
+.gallery, .grid-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -94,7 +117,7 @@ footer {
     padding: 20px;
 }
 
-.gallery img {
+.gallery img, .grid-gallery img {
     width: 200px;
     height: auto;
     border-radius: 10px;
@@ -102,52 +125,8 @@ footer {
     transition: transform 0.3s;
 }
 
-.gallery img:hover {
+.gallery img:hover, .grid-gallery img:hover {
     transform: scale(1.1);
-}
-
-.info-box {
-    width: 50%; 
-    height: 20%; 
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 20px auto; /* Centra horizontalmente */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px; /* Opcional: bordes redondeados */
-}
-
-.grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
-}
-
-.grid-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.grid-gallery img:hover {
-    transform: scale(1.1);
-}
-.button {
-
-    padding: 10px 15px;
-    background-color: #ff4d4d;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 0;
-    margin-bottom: 20px;
-    
 }
 
 
@@ -172,6 +151,7 @@ footer {
     color: white;
 }
 
+
 .update-btn, .delete-btn {
     padding: 5px 10px;
     border: none;
@@ -188,3 +168,52 @@ footer {
 .delete-btn {
     background-color: #e74c3c;
 }
+
+.spirit-section {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+.spirit-text {
+    width: 50%;
+    text-align: left;
+    max-width: 500px; 
+}
+
+.spirit-text h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.spirit-text p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 0; 
+}
+
+
+.spirit-images {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
+
+.spirit-images img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.spirit-images img:hover {
+    transform: scale(1.1);
+}
+
+
