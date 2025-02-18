@@ -10,8 +10,11 @@ ltl aliveOFF { []<> tiempoT -> []<> !luz}
 mtype = { OFF, ON };
 int luz_state;
 int boton;
-int luz;
+int luz_azul;
 int tiempoT
+int luz_state2;
+int luz_roja;
+int tiempoT1;
 
 
 /*FSMs*/
