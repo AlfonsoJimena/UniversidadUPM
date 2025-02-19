@@ -36,7 +36,7 @@ active proctype luz_roja_fsm() {
 	:: (luz_state_roja==ON) -> atomic {
 		if
 		:: (boton && !tiempoT_roja) -> boton=0; luz_state_roja = ON
-        :: tiempoT_roja -> luz_roja=0; tiempoT_roja=0; luz_state_roja = OFF
+        :: tiempoT_roja -> luz_roja=0; tiempoT_roja=0; luz_state_roja = OFF; printf("next=now+T")
 		fi
 	}
 	od
@@ -47,7 +47,7 @@ active proctype luz_azul_fsm() {
 	do
 	:: (luz_state_azul==toggle) -> atomic {
 		if
-		:: tiempoT_azul -> luz_azul=!luz_azul;tiempoT_azul = 0; luz_state_azul = toggle
+		:: tiempoT_azul -> luz_azul=!luz_azul;tiempoT_azul = 0; luz_state_azul = toggle; printf("next=next+T")
 		fi   
 	}
     od
