@@ -13,52 +13,42 @@ ltl aliveOFF_roja { []<> tiempoT_roja -> []<> !luz_roja}
 
 
 /*Estados, entradas, salidas*/
-mtype = { toggle, ON, OFF };
-int luz_state_roja;
-int luz_roja;
-int tiempoT_roja;
-int luz_state_azul;
-int boton;
-int luz_azul;
-int tiempoT_azul;
+mtype = { BLINK, ON, OFF };
+int luz_state;
+int boton
+int luz
+int tiempoT
 
 
 /*FSMs*/
-active proctype luz_roja_fsm() {
-    luz_state_roja=OFF;
+active proctype luz_state {
+    luz_state == OFF;
 	do
-	:: (luz_state_roja==OFF) -> atomic {
+	:: (luz_state==OFF) -> atomic {
 		if
-		:: boton -> luz_roja=1; boton=0; luz_state_roja = ON
+		:: boton -> luz=1; boton=0; luz_state = BLINK
 		fi
 	}
 
-	:: (luz_state_roja==ON) -> atomic {
+	:: (luz_state==BLINK) -> atomic {
 		if
-		:: (boton && !tiempoT_roja) -> boton=0; luz_state_roja = ON
-        :: tiempoT_roja -> luz_roja=0; tiempoT_roja=0; luz_state_roja = OFF; printf("next=now+T")
+		:: tiempoT -> luz=!luz; tiempoT=0
+		:: (boton && !tiempoT) -> luz=1; tiempoT=0; boton=0; luz_state==0N
+
+		fi
+	:: (luz_state==ON) -> atomic {
+		if
+		:: boton -> luz=0; boton=0; luz_state = OFF
 		fi
 	}
 	od
-}
-
-active proctype luz_azul_fsm() {
-	luz_state_azul=toggle;
-	do
-	:: (luz_state_azul==toggle) -> atomic {
-		if
-		:: tiempoT_azul -> luz_azul=!luz_azul;tiempoT_azul = 0; luz_state_azul = toggle; printf("next=next+T")
-		fi   
-	}
-    od
 }
 
 /*entorno*/
 active proctype entorno() {
 	do
 	:: 	if
-        :: tiempoT_azul = 1
-        :: tiempoT_roja = 1
+        :: tiempoT = 1
         :: boton = 1
 		:: skip -> skip
         fi;
