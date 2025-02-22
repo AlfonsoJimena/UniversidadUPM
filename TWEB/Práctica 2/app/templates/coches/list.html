@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Lista de Coches</h2>
+<ul>
+    {% for coche in coches %}
+        <li>
+            <a href="{{ url_for('coches.mostrar_coche', coche_id=coche.id) }}">
+                {{ coche.marca }} {{ coche.modelo }} - {{ coche.anio }}
+            </a>
+            <form action="{{ url_for('coches.eliminar_coche', coche_id=coche.id) }}" method="post">
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('coches.formulario_nuevo') }}">Añadir nuevo coche</a>
+{% endblock %}

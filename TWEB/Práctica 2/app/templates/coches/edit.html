@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Editar Coche</h2>
+<form action="{{ url_for('coches.editar_coche', coche_id=coche.id) }}" method="post">
+    <label>Marca: <input type="text" name="marca" value="{{ coche.marca }}" required></label><br>
+    <label>Modelo: <input type="text" name="modelo" value="{{ coche.modelo }}" required></label><br>
+    <label>Año: <input type="number" name="anio" value="{{ coche.anio }}" required></label><br>
+    <label>Precio: <input type="number" name="precio" step="0.01" value="{{ coche.precio }}" required></label><br>
+    <label>Descapotable: 
+        <input type="checkbox" name="descapotable" {% if coche.descapotable %}checked{% endif %}>
+    </label><br>
+    <button type="submit">Guardar Cambios</button>
+</form>
+<a href="{{ url_for('coches.listar_coches') }}">Cancelar</a>
+{% endblock %}

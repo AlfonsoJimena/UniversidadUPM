@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Web de Coches{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Mi Web de Coches</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('about') }}">Acerca de</a>
+            <a href="{{ url_for('coches.listar_coches') }}">Coches</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <h2>Bienvenido a nuestra web de coches</h2>
+        <p>Explora nuestra colección de coches, conoce sus detalles y mucho más.</p>
+        {% endblock %}
+    </main>
+    <footer>© 2025 Mi Web de Coches</footer>
+</body>
+</html>
