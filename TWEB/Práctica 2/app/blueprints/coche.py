@@ -4,8 +4,9 @@ coches_bp = Blueprint("coches", __name__)
 
 # Datos de ejemplo (Seeder)
 coches = [
-    {"id": 1, "marca": "Porsche", "modelo": "Cayman 987", "anio": 2008, "precio": 40000, "descapotable": False},
-    {"id": 2, "marca": "Mazda", "modelo": "MX-5 ND RF", "anio": 2019, "precio": 30000, "descapotable": True}
+    {"id": 1, "marca": "Porsche", "modelo": "Cayman 987", "cv": 295, "manual": True, "año": 2010},
+    {"id": 2, "marca": "Mazda", "modelo": "MX-5 ND RF", "cv": 184, "manual": True, "año": 2022},
+    {"id": 3, "marca": "BMW", "modelo": "M3 E46", "cv": 343, "manual": True, "año": 2003}
 ]
 
 # Listar coches
