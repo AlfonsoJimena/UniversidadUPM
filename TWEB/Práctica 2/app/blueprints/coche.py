@@ -18,11 +18,15 @@ coches = [
     {"id": 12, "marca": "Nissan", "modelo": "370Z", "cv": 328, "manual": True, "anio": 2018, "precio": 35000, "descapotable": False}
 ]
 
-
 # Listar coches
 @coches_bp.route("/")
 def listar_coches():
-    return render_template("coches/list.html", coches=coches)
+    query = request.args.get("q", "").lower()
+    if query:
+        coches_filtrados = [coche for coche in coches if query in coche["marca"].lower() or query in coche["modelo"].lower()]
+    else:
+        coches_filtrados = coches
+    return render_template("coches/list.html", coches=coches_filtrados, query=query)
 
 # Mostrar detalle de un coche
 @coches_bp.route("/<int:coche_id>")

@@ -9,21 +9,26 @@
     <button type="submit">Buscar</button>
 </form>
 
-<ul class="car-list">
-    {% for coche in coches %}
-        <li class="car-item">
-            <a href="{{ url_for('coches.mostrar_coche', coche_id=coche.id) }}">
-                {{ coche.marca }} {{ coche.modelo }} - {{ coche.anio }}
-            </a>
-            <form action="{{ url_for('coches.eliminar_coche', coche_id=coche.id) }}" method="post">
-                <button type="submit" class="delete-btn">Eliminar</button>
-            </form>
-        </li>
-    {% endfor %}
-</ul>
+{% if coches %}
+    <ul class="car-list">
+        {% for coche in coches %}
+            <li class="car-item">
+                <a href="{{ url_for('coches.mostrar_coche', coche_id=coche.id) }}">
+                    {{ coche.marca }} {{ coche.modelo }} - {{ coche.anio }} - {{ coche.precio}} - {{ coche.cv }} CV
+                </a>
+                <form action="{{ url_for('coches.eliminar_coche', coche_id=coche.id) }}" method="post">
+                    <button type="submit" class="delete-btn">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se han encontrado coches con ese término de búsqueda.</p>
+{% endif %}
 
 <a href="{{ url_for('coches.formulario_nuevo') }}" class="add-car">Añadir nuevo coche</a>
 
 {% endblock %}
+
 
 
