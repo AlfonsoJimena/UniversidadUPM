@@ -1,17 +1,29 @@
 {% extends "layout.html" %}
+
 {% block content %}
 <h2>Lista de Coches</h2>
-<ul>
+
+<!-- Buscador -->
+<form method="GET" action="{{ url_for('coches.listar_coches') }}" class="search-form">
+    <input type="text" name="q" placeholder="Buscar por marca o modelo..." value="{{ request.args.get('q', '') }}">
+    <button type="submit">Buscar</button>
+</form>
+
+<ul class="car-list">
     {% for coche in coches %}
-        <li>
+        <li class="car-item">
             <a href="{{ url_for('coches.mostrar_coche', coche_id=coche.id) }}">
                 {{ coche.marca }} {{ coche.modelo }} - {{ coche.anio }}
             </a>
             <form action="{{ url_for('coches.eliminar_coche', coche_id=coche.id) }}" method="post">
-                <button type="submit">Eliminar</button>
+                <button type="submit" class="delete-btn">Eliminar</button>
             </form>
         </li>
     {% endfor %}
 </ul>
-<a href="{{ url_for('coches.formulario_nuevo') }}">Añadir nuevo coche</a>
+
+<a href="{{ url_for('coches.formulario_nuevo') }}" class="add-car">Añadir nuevo coche</a>
+
 {% endblock %}
+
+

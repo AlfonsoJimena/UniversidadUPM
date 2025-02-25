@@ -4,10 +4,20 @@ coches_bp = Blueprint("coches", __name__)
 
 # Datos de ejemplo (Seeder)
 coches = [
-    {"id": 1, "marca": "Porsche", "modelo": "Cayman 987", "cv": 295, "manual": True, "año": 2010},
-    {"id": 2, "marca": "Mazda", "modelo": "MX-5 ND RF", "cv": 184, "manual": True, "año": 2022},
-    {"id": 3, "marca": "BMW", "modelo": "M3 E46", "cv": 343, "manual": True, "año": 2003}
+    {"id": 1, "marca": "Mazda", "modelo": "MX-5 Miata", "cv": 100, "manual": True, "anio": 1990, "precio": 3000, "descapotable": True},
+    {"id": 2, "marca": "Mazda", "modelo": "MX-5 ND RF", "cv": 184, "manual": True, "anio": 2025, "precio": 44000, "descapotable": True},
+    {"id": 3, "marca": "Mazda", "modelo": "MX-5 ND NC", "cv": 131, "manual": True, "anio": 2025, "precio": 41000, "descapotable": True},
+    {"id": 4, "marca": "Porsche", "modelo": "987 Cayman S", "cv": 295, "manual": True, "anio": 2008, "precio": 35000, "descapotable": False},
+    {"id": 5, "marca": "Porsche", "modelo": "911 Carrera", "cv": 385, "manual": True, "anio": 2012, "precio": 60000, "descapotable": False},
+    {"id": 6, "marca": "BMW", "modelo": "Z4", "cv": 197, "manual": False, "anio": 2020, "precio": 55000, "descapotable": True},
+    {"id": 7, "marca": "Toyota", "modelo": "GR86", "cv": 234, "manual": True, "anio": 2023, "precio": 38000, "descapotable": False},
+    {"id": 8, "marca": "Toyota", "modelo": "Supra A90", "cv": 340, "manual": False, "anio": 2022, "precio": 67000, "descapotable": False},
+    {"id": 9, "marca": "Ford", "modelo": "Mustang GT", "cv": 450, "manual": True, "anio": 2024, "precio": 58000, "descapotable": True},
+    {"id": 10, "marca": "Chevrolet", "modelo": "Corvette C8", "cv": 495, "manual": False, "anio": 2023, "precio": 75000, "descapotable": True},
+    {"id": 11, "marca": "Honda", "modelo": "S2000", "cv": 240, "manual": True, "anio": 2006, "precio": 30000, "descapotable": True},
+    {"id": 12, "marca": "Nissan", "modelo": "370Z", "cv": 328, "manual": True, "anio": 2018, "precio": 35000, "descapotable": False}
 ]
+
 
 # Listar coches
 @coches_bp.route("/")

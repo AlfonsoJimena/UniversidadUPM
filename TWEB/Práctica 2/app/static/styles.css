@@ -1,35 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+/* Contenedor del buscador */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-h1, h2 {
-    color: #333;
+.search-form input {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-main {
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-button {
+.search-form button {
     background: #007bff;
     color: white;
     border: none;
@@ -38,15 +22,57 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+.search-form button:hover {
     background: #0056b3;
 }
 
-a {
-    text-decoration: none;
+/* Lista de coches */
+.car-list {
+    list-style: none;
+    padding: 0;
+}
+
+.car-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.car-item a {
+    font-weight: bold;
     color: #007bff;
 }
 
-a:hover {
+.car-item a:hover {
     text-decoration: underline;
 }
+
+/* Botón de eliminar */
+.delete-btn {
+    background: #dc3545;
+    padding: 5px 10px;
+}
+
+.delete-btn:hover {
+    background: #b02a37;
+}
+
+/* Botón de añadir coche */
+.add-car {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.add-car:hover {
+    background: #218838;
+}
+
