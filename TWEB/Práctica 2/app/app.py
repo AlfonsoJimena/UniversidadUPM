@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from blueprints.coche import coches_bp
+import blueprints
 from errors.handlers import init_error_handlers  
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def modificar_respuesta(response):
     return response
 
 # Registrar el blueprint de coches
-app.register_blueprint(coches_bp, url_prefix="/coches")
+app.register_blueprint(blueprints.coches_bp, url_prefix="/coches")
 
 # Registrar manejadores de errores
 init_error_handlers(app)
