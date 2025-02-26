@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 
 coches_bp = Blueprint("coches", __name__)
 
-# Datos de ejemplo (Seeder)
+# Seeder
 coches = [
     {"id": 1, "marca": "Mazda", "modelo": "MX-5 Miata", "cv": 100, "manual": True, "anio": 1990, "precio": 3000, "descapotable": True},
     {"id": 2, "marca": "Mazda", "modelo": "MX-5 ND RF", "cv": 184, "manual": True, "anio": 2025, "precio": 44000, "descapotable": True},
